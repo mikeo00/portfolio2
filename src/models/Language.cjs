@@ -1,10 +1,4 @@
 const supabase = require('../config/db.cjs');
-function requireAdmin(req, res, next) {
-  if (req.headers["x-admin-key"] !== process.env.ADMIN_KEY) {
-    return res.status(401).json({ error: "Unauthorized" });
-  }
-  next();
-}
 
 class Language{
     static async find(){

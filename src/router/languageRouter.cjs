@@ -16,9 +16,9 @@ router.get('/:id',async(req,res)=>{
     try{
         const language = await Language.findbyid(req.params.id);
         if(!language){
-            return response.status(404).json({message:'employee not found'})
+            return res.status(404).json({message:'language not found'})
         }else{
-            response.status(200).json(language);
+            res.status(200).json(language);
         }
     }catch(error){
         res.status(500).json({error:error.message})
