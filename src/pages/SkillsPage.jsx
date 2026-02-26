@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { getTechIcon } from '../components/TechIcons'
+import { fetchAPI } from '../utils/api'
 import '../styles/SkillsPage.css'
 
 export default function SkillsPage() {
@@ -12,13 +13,10 @@ export default function SkillsPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [langsRes, framesRes] = await Promise.all([
-          fetch('http://localhost:4000/languages'),
-          fetch('http://localhost:4000/frameworks')
+        const [langsData, framesData] = await Promise.all([
+          fetchAPI('/languages'),
+          fetchAPI('/frameworks')
         ])
-
-        const langsData = await langsRes.json()
-        const framesData = await framesRes.json()
 
         console.log('Languages data:', langsData)
         console.log('Frameworks data:', framesData)

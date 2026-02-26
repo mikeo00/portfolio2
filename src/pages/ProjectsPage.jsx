@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { fetchAPI } from '../utils/api'
 import '../styles/ProjectsPage.css'
 
 export default function ProjectsPage() {
@@ -10,8 +11,7 @@ export default function ProjectsPage() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch('http://localhost:4000/projects')
-        const data = await res.json()
+        const data = await fetchAPI('/projects')
         setProjects(data)
       } catch (error) {
         console.error('Error fetching projects:', error)

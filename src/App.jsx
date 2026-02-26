@@ -6,7 +6,7 @@ import Navigation from './navigation.jsx'
 import HomePage from './pages/HomePage'
 import ProjectsPage from './pages/ProjectsPage'
 import SkillsPage from './pages/SkillsPage'
-import Backend from './Backend'
+import Backend from './backend.jsx'
 import Login from './components/Login'
 import { AuthContext, AuthProvider } from './context/AuthContext'
 

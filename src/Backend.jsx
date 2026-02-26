@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { postFormAPI } from "./utils/api";
 
 function Backend() {
   const [flag, setFlag] = useState(-1);
@@ -19,23 +20,13 @@ async function handleSubmit(e) {
   try {
     const formData = new FormData(e.target);
 
-    let url = "";
-    if (flag === 0) url = "http://localhost:4000/projects";
-    if (flag === 1) url = "http://localhost:4000/languages";
-    if (flag === 2) url = "http://localhost:4000/frameworks";
-    if (!url) throw new Error("Select an option first");
-console.log("ADMIN KEY:", import.meta.env.VITE_ADMIN_KEY);
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "x-admin-key": import.meta.env.VITE_ADMIN_KEY,
-      },
-      body: formData,
-    });
+    let endpoint = "";
+    if (flag === 0) endpoint = "/projects";
+    if (flag === 1) endpoint = "/languages";
+    if (flag === 2) endpoint = "/frameworks";
+    if (!endpoint) throw new Error("Select an option first");
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || "Failed");
-
+    const data = await postFormAPI(endpoint, formData);
     alert("Added successfully");
     e.target.reset();
     setFlag(-1);
