@@ -9,7 +9,7 @@ class Language{
             return data;
         }
     }
-    static async findbyid(id,language){
+    static async findbyid(id){
         const {data,error} = await supabase.from('languages').select('*').eq('id',id).single();
         if(error){
             throw error;

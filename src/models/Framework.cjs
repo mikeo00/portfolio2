@@ -1,5 +1,4 @@
 const supabase = require('../config/db.cjs');
-const { default: Language } = require('./Language.cjs');
 
 class Framework{
     static async find(){
