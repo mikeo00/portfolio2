@@ -11,10 +11,13 @@ export default function ProjectsPage() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
+        console.log('Fetching projects from /projects...')
         const data = await fetchAPI('/projects')
+        console.log('Projects data:', data)
         setProjects(data)
       } catch (error) {
         console.error('Error fetching projects:', error)
+        setProjects([])
       } finally {
         setLoading(false)
       }
@@ -71,7 +74,7 @@ export default function ProjectsPage() {
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           ></motion.div>
         </motion.div>
-      ) : projects.length === 0 ? (
+      ) : !Array.isArray(projects) || projects.length === 0 ? (
         <motion.div
           className="no-projects"
           initial={{ opacity: 0 }}
