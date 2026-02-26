@@ -57,11 +57,11 @@ export default function HomePage() {
             className="hero-title"
             variants={titleVariants}
           >
-            <span className="title-gradient">Creative Developer</span>
+            <span className="title-gradient">Michael Osta</span>
           </motion.h1>
 
           <motion.p className="hero-subtitle" variants={itemVariants}>
-            Crafting beautiful, interactive digital experiences with cutting-edge technology
+            I'm a 3rd year computer science student looking forward to become a software and AI engineer, also passionate about web development.
           </motion.p>
 
           <motion.div className="hero-buttons" variants={itemVariants}>
@@ -168,7 +168,6 @@ export default function HomePage() {
         viewport={{ once: false }}
       >
         <h2>Let's Create Something Amazing</h2>
-        <p>Ready to bring your ideas to life?</p>
         <motion.a
           href="/projects"
           className="btn btn-primary"
