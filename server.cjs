@@ -27,9 +27,9 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.static('dist'));
 
-app.use('/languages', languageRouter);
-app.use('/frameworks', frameworkRouter);
-app.use('/projects', projectRouter);
+app.use('/api/languages', languageRouter);
+app.use('/api/frameworks', frameworkRouter);
+app.use('/api/projects', projectRouter);
 
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
