@@ -148,26 +148,156 @@
   margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+  .projects-page {
+    padding: 1.5rem;
+  }
+
+  .projects-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .projects-page {
     padding: 1rem;
   }
 
+  .projects-header {
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+  }
+
   .projects-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .projects-header p {
+    font-size: 1rem;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0.5rem;
   }
 
   .project-card {
-    display: flex;
-    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .project-image-wrapper {
+    height: 180px;
+  }
+
+  .project-image-fallback {
+    font-size: 3rem;
+  }
+
+  .project-content {
+    padding: 1.2rem;
+  }
+
+  .project-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-meta {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .meta-item {
+    font-size: 0.8rem;
+  }
+
+  .github-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-page {
+    padding: 0.8rem;
+  }
+
+  .projects-header {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .projects-header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .projects-header p {
+    font-size: 0.9rem;
+  }
+
+  .projects-grid {
+    gap: 1.2rem;
+    padding: 0;
+  }
+
+  .project-card {
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   .project-image-wrapper {
     height: 150px;
+  }
+
+  .project-image-fallback {
+    font-size: 2.5rem;
+  }
+
+  .project-content {
+    padding: 1rem;
+  }
+
+  .project-content h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.7rem;
+  }
+
+  .project-meta {
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .meta-item {
+    font-size: 0.75rem;
+  }
+
+  .meta-label {
+    font-size: 0.75rem;
+  }
+
+  .github-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
   }
 }

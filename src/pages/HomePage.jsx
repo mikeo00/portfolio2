@@ -32,15 +32,21 @@ export default function HomePage() {
   }
 
   const floatingBoxVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
+    hidden: { opacity: 0, scale: 0 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 1.2 }
+      transition: { duration: 1.2, type: "spring", stiffness: 100 }
     },
     animate: {
-      y: [0, -20, 0],
-      transition: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+      y: [0, -40, 0],
+      x: [0, 20, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut",
+        times: [0, 0.5, 1]
+      }
     }
   }
 
@@ -93,7 +99,7 @@ export default function HomePage() {
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              className="floating-box"
+              className="floating-orb"
               variants={floatingBoxVariants}
               animate="animate"
               style={{
