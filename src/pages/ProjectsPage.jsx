@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Package } from 'lucide-react'
 import { fetchAPI } from '../utils/api'
 import '../styles/ProjectsPage.css'
 
@@ -105,7 +106,9 @@ export default function ProjectsPage() {
                     onError={() => handleImageError(`proj-${project.id}`)}
                   />
                 ) : (
-                  <div className="project-image-fallback">📦</div>
+                  <div className="project-image-fallback">
+                    <Package size={64} />
+                  </div>
                 )}
               </div>
 

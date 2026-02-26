@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Palette, Zap, Rocket, Sparkles } from 'lucide-react'
 import '../styles/HomePage.css'
 
 export default function HomePage() {
@@ -130,22 +131,22 @@ export default function HomePage() {
             {
               title: 'Responsive Design',
               description: 'Beautiful interfaces that work seamlessly on all devices',
-              icon: '🎨'
+              icon: Palette
             },
             {
               title: 'Performance',
               description: 'Lightning-fast applications optimized for user experience',
-              icon: '⚡'
+              icon: Zap
             },
             {
               title: 'Modern Stack',
               description: 'Built with the latest technologies and best practices',
-              icon: '🚀'
+              icon: Rocket
             },
             {
               title: 'Interactive',
               description: 'Engaging animations and smooth user interactions',
-              icon: '✨'
+              icon: Sparkles
             }
           ].map((feature, i) => (
             <motion.div
@@ -158,7 +159,7 @@ export default function HomePage() {
                 boxShadow: '0 30px 60px rgba(0, 212, 255, 0.2)'
               }}
             >
-              <div className="feature-icon">{feature.icon}</div>
+              <feature.icon className="feature-icon" size={32} />
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </motion.div>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Github, Linkedin } from 'lucide-react'
 
 export default function Footer() {
   const containerVariants = {
@@ -60,7 +61,7 @@ export default function Footer() {
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="link-icon">💻</span>
+            <Github className="link-icon" size={20} />
             <span className="link-text">GitHub</span>
           </motion.a>
 
@@ -73,13 +74,13 @@ export default function Footer() {
             whileHover={{ scale: 1.1, rotate: -5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="link-icon">🔗</span>
+            <Linkedin className="link-icon" size={20} />
             <span className="link-text">LinkedIn</span>
           </motion.a>
         </motion.div>
 
         <motion.div className="footer-section" variants={itemVariants}>
-          <p className="footer-copyright">© 2024 Michael Osta. All rights reserved.</p>
+          <p className="footer-copyright">© 2026 Michael Osta. All rights reserved.</p>
         </motion.div>
       </div>
     </motion.footer>
