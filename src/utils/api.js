@@ -1,13 +1,15 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000'
+const API_URL = import.meta.env.VITE_API_URL || ''
 
 export async function fetchAPI(endpoint) {
-  const response = await fetch(`${API_URL}${endpoint}`)
+  const url = API_URL ? `${API_URL}${endpoint}` : endpoint
+  const response = await fetch(url)
   if (!response.ok) throw new Error(`API Error: ${response.statusText}`)
   return response.json()
 }
 
 export async function postAPI(endpoint, data) {
-  const response = await fetch(`${API_URL}${endpoint}`, {
+  const url = API_URL ? `${API_URL}${endpoint}` : endpoint
+  const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -20,7 +22,8 @@ export async function postAPI(endpoint, data) {
 }
 
 export async function postFormAPI(endpoint, formData) {
-  const response = await fetch(`${API_URL}${endpoint}`, {
+  const url = API_URL ? `${API_URL}${endpoint}` : endpoint
+  const response = await fetch(url, {
     method: 'POST',
     headers: {
       'x-admin-key': import.meta.env.VITE_ADMIN_KEY || ''
