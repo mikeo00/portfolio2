@@ -8,6 +8,7 @@ import ProjectsPage from './pages/ProjectsPage'
 import SkillsPage from './pages/SkillsPage'
 import Backend from './backend.jsx'
 import Login from './components/Login'
+import Footer from './components/Footer'
 import { AuthContext, AuthProvider } from './context/AuthContext'
 
 function AppContent() {
@@ -33,6 +34,8 @@ function AppContent() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/skills" element={<SkillsPage />} />
         </Routes>
+
+        <Footer />
 
         <AnimatePresence>
           {showAdmin && user && (
