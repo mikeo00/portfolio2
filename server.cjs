@@ -31,7 +31,7 @@ app.use('/languages', languageRouter);
 app.use('/frameworks', frameworkRouter);
 app.use('/projects', projectRouter);
 
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
