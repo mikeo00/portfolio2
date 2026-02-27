@@ -8,12 +8,14 @@ const upload = multer({ storage: multer.memoryStorage() });
 router.get('/',async(req,res)=>{
     try{
         const projects = await Project.find();
+        console.log('Projects from DB:', projects);
         const withUrls = projects.map(p=>({
             ...p,
             image_url:Buckets.getPublicUrl("images",p.image)
         }))
         res.status(200).json(withUrls);
     }catch(error){
+        console.error('Error fetching projects:', error);
         res.status(500).json({error:error.message});
     }
 })
